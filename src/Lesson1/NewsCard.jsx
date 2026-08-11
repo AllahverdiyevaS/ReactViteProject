@@ -46,12 +46,12 @@ const NewsCard = () => {
     <>
       <div className="news_container">
         <button
-          class="rounded-md bg-sky-500 hover:bg-blue-500 p-2 cursor-pointer"
+          className="rounded-md bg-sky-500 hover:bg-blue-500 p-2 cursor-pointer"
           onClick={handleClick}
         >
           Add news
         </button>
-        <div class="flex flex-row justify-start flex-wrap m-8 gap-4">
+        <div className="flex flex-row justify-start flex-wrap m-8 gap-4">
           {newInfos.map((item, index) => (
             <NewsItem
               key={index}
