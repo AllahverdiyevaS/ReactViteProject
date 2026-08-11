@@ -45,18 +45,24 @@ const NewsCard = () => {
   return (
     <>
       <div className="news_container">
-        <h2>News</h2>
+        <button
+          class="rounded-md bg-sky-500 hover:bg-blue-500 p-2 cursor-pointer"
+          onClick={handleClick}
+        >
+          Add news
+        </button>
+        <div class="flex flex-row justify-start flex-wrap m-8 gap-4">
+          {newInfos.map((item, index) => (
+            <NewsItem
+              key={index}
+              title={item.title}
+              img={item.img}
+              description={item.description}
+              link={item.link}
+            />
+          ))}
+        </div>
       </div>
-      <button onClick={handleClick}>Add news</button>
-      {newInfos.map((item, index) => (
-        <NewsItem
-          key={index}
-          title={item.title}
-          img={item.img}
-          description={item.description}
-          link={item.link}
-        />
-      ))}
     </>
   );
 };
