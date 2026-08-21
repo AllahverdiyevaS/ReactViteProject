@@ -1,9 +1,5 @@
 const ImageItem = ({ images }) => {
-  return (
-    <div>
-      <img src={images.urls.small} alt="" />
-    </div>
-  );
+  return <img className="image_item" src={images.urls.small} alt="" />;
 };
 
 export default ImageItem;
