@@ -1,7 +1,9 @@
+import { useState } from "react";
 import "./App.css";
 
 import Api from "./Lesson3/Api";
 import Search from "./Lesson3/Search";
+import ImageList from "./Lesson3/ImageList";
 // import NewsCard from "./Lesson1/NewsCard";
 
 // import ProductCard from "./Lesson1/ProductCard";
@@ -21,13 +23,16 @@ import Search from "./Lesson3/Search";
 // }
 // Lesson3
 function App() {
+  const [imageList, setImages] = useState([]);
   const handleSerach = async (term) => {
     const result = await Api(term);
     console.log(result);
+    setImages(result);
   };
   return (
     <>
       <Search search={handleSerach} />
+      <ImageList imagesArray={imageList} />
     </>
   );
 }
