@@ -1,0 +1,40 @@
+import { useState } from "react";
+
+const TaskCreatForm = ({ onCreate }) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  function handleTitleChange(event) {
+    setTitle(event.target.value);
+  }
+  function handleDescriptionChange(event) {
+    setDescription(event.target.value);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    onCreate(title, description);
+    setTitle("");
+    setDescription("");
+  }
+  return (
+    <div className="form_container">
+      <h1>Create Task</h1>
+      <form className="form">
+        <label>Title</label>
+        <input
+          type="text"
+          className="title_input"
+          value={title}
+          onChange={handleTitleChange}
+        />
+        <label>Description</label>
+        <textarea
+          value={description}
+          onChange={handleDescriptionChange}
+        ></textarea>
+        <button onClick={handleSubmit}>Create</button>
+      </form>
+    </div>
+  );
+};
+
+export default TaskCreatForm;

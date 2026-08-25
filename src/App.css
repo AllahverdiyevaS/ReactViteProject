@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 .product_img {
   width: 100%;
@@ -82,4 +82,26 @@
 .image_item {
   width: 100%;
   margin-bottom: 1rem;
+} */
+.form_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  gap: 0.5rem;
+}
+.title_input,
+.form textarea {
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid grey;
+  padding: 5px;
+  margin-bottom: 0.5rem;
 }

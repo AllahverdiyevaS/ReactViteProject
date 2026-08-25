@@ -1,9 +1,11 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
 
-import Api from "./Lesson3/Api";
-import Search from "./Lesson3/Search";
-import ImageList from "./Lesson3/ImageList";
+// import Api from "./Lesson3/Api";
+// import Search from "./Lesson3/Search";
+// import ImageList from "./Lesson3/ImageList";
+import TaskCreatForm from "./Lesson4/TaskCreatForm";
+import TasksList from "./Lesson4/TasksList";
 // import NewsCard from "./Lesson1/NewsCard";
 
 // import ProductCard from "./Lesson1/ProductCard";
@@ -22,17 +24,31 @@ import ImageList from "./Lesson3/ImageList";
 //   );
 // }
 // Lesson3
+// function App() {
+//   const [imageList, setImages] = useState([]);
+//   const handleSerach = async (term) => {
+//     const result = await Api(term);
+//     console.log(result);
+//     setImages(result);
+//   };
+//   return (
+//     <>
+//       <Search search={handleSerach} />
+//       <ImageList imagesArray={imageList} />
+//     </>
+//   );
+// }
+// export default App;
+
+// Lesson4
 function App() {
-  const [imageList, setImages] = useState([]);
-  const handleSerach = async (term) => {
-    const result = await Api(term);
-    console.log(result);
-    setImages(result);
-  };
+  function createTask(title, description) {
+    console.log(title, description);
+  }
   return (
     <>
-      <Search search={handleSerach} />
-      <ImageList imagesArray={imageList} />
+      <TaskCreatForm onCreate={createTask} />
+      <TasksList />
     </>
   );
 }
