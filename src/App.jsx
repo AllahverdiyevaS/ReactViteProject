@@ -46,10 +46,10 @@ function App() {
     console.log(title, description);
   }
   return (
-    <>
+    <div className="main">
       <TaskCreatForm onCreate={createTask} />
       <TasksList />
-    </>
+    </div>
   );
 }
 export default App;

@@ -28,10 +28,13 @@ const TaskCreatForm = ({ onCreate }) => {
         />
         <label>Description</label>
         <textarea
+          rows={5}
           value={description}
           onChange={handleDescriptionChange}
         ></textarea>
-        <button onClick={handleSubmit}>Create</button>
+        <button className="create_button" onClick={handleSubmit}>
+          Create
+        </button>
       </form>
     </div>
   );
