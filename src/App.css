@@ -118,3 +118,32 @@
 .create_button:hover {
   background-color: rgb(15, 245, 15);
 }
+.task_list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.task_card {
+  border: 1px solid green;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  height: 150px;
+}
+.button_container {
+  display: flex;
+  gap: 1rem;
+}
+.button_container button {
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+  min-width: 70px;
+  width: 100%;
+  color: white;
+}
+.button_container button:first-child {
+  background-color: red;
+}
+.button_container button:last-child {
+  background-color: green;
+}

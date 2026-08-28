@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import "./App.css";
-
+import { useState } from "react";
 // import Api from "./Lesson3/Api";
 // import Search from "./Lesson3/Search";
 // import ImageList from "./Lesson3/ImageList";
@@ -42,13 +42,19 @@ import TasksList from "./Lesson4/TasksList";
 
 // Lesson4
 function App() {
-  function createTask(title, description) {
-    console.log(title, description);
+  const [tasks, setTasks] = useState([]);
+  function createTask({ title, description }) {
+    const newTask = {
+      id: Math.round(Math.random() * 9999),
+      title,
+      description,
+    };
+    setTasks(() => [...tasks, newTask]);
   }
   return (
     <div className="main">
       <TaskCreatForm onCreate={createTask} />
-      <TasksList />
+      <TasksList tasks={tasks} />
     </div>
   );
 }

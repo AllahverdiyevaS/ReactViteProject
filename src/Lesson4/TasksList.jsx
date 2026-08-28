@@ -1,8 +1,15 @@
-const TasksList = () => {
+import TaskCard from "./TaskCard";
+
+const TasksList = ({ tasks }) => {
   return (
-    <div>
-      <h1>TasksList</h1>
-    </div>
+    <>
+      <h1>Tasks List</h1>
+      <div className="task_list">
+        {tasks.map((task, index) => (
+          <TaskCard task={task} key={index} />
+        ))}
+      </div>
+    </>
   );
 };
 
