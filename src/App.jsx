@@ -55,10 +55,16 @@ function App() {
 
     setTasks(createTask);
   };
+  const deleteTaskById = (id) => {
+    const afterDelete = tasks.filter((task) => {
+      return task.id !== id;
+    });
+    setTasks(afterDelete);
+  };
   return (
     <div className="main">
       <TaskCreatForm onCreate={createTask} />
-      <TasksList tasks={tasks} />
+      <TasksList tasks={tasks} onDelete={deleteTaskById} />
     </div>
   );
 }
