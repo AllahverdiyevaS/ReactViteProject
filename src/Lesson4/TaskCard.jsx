@@ -1,7 +1,7 @@
 const TaskCard = ({ task }) => {
   return (
     <div className="task_card">
-      <h4>{task.title}</h4>
+      <h1>{task.title}</h1>
       <h4>Task description</h4>
       <p>{task.description}</p>
       <div className="button_container">

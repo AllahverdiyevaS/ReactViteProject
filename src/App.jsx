@@ -43,14 +43,18 @@ import TasksList from "./Lesson4/TasksList";
 // Lesson4
 function App() {
   const [tasks, setTasks] = useState([]);
-  function createTask({ title, description }) {
-    const newTask = {
-      id: Math.round(Math.random() * 9999),
-      title,
-      description,
-    };
-    setTasks(() => [...tasks, newTask]);
-  }
+  const createTask = (title, description) => {
+    const createTask = [
+      ...tasks,
+      {
+        id: Math.round(Math.random() * 99999999),
+        title,
+        description,
+      },
+    ];
+
+    setTasks(createTask);
+  };
   return (
     <div className="main">
       <TaskCreatForm onCreate={createTask} />
