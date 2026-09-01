@@ -126,13 +126,14 @@
   flex-wrap: wrap;
 }
 .task_card {
-  padding: 2rem 3rem;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 .button_container {
   display: flex;
   gap: 1rem;
-  margin-top: auto;
+  flex-grow: 1;
 }
 .button_container button {
   border-radius: 5px;
