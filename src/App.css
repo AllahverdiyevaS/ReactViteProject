@@ -85,7 +85,8 @@
 } */
 
 .main,
-.form_container {
+.form_container,
+.edit_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,7 +94,8 @@
   align-items: center;
   width: 100%;
 }
-.form {
+.form,
+.form_edit {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -124,13 +126,13 @@
   flex-wrap: wrap;
 }
 .task_card {
-  border: 1px solid green;
   padding: 2rem 3rem;
   border-radius: 10px;
 }
 .button_container {
   display: flex;
   gap: 1rem;
+  margin-top: auto;
 }
 .button_container button {
   border-radius: 5px;
@@ -139,10 +141,19 @@
   min-width: 70px;
   width: 100%;
   color: white;
+  cursor: pointer;
 }
 .button_container button:first-child {
   background-color: red;
 }
 .button_container button:last-child {
   background-color: green;
+}
+.task-show {
+  border: 1px solid green;
+  border-radius: 30px;
+  width: 350px;
+  padding: 1rem;
+  text-align: center;
+  margin: 10px;
 }
