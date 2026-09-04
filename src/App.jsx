@@ -61,10 +61,24 @@ function App() {
     });
     setTasks(afterDelete);
   };
+  const editTaskById = (id, title, description) => {
+    const updatedTask = tasks.map((task) => {
+      if (task.id === id) {
+        return { id, title, description };
+      }
+      return task;
+    });
+    setTasks(updatedTask);
+  };
+
   return (
     <div className="main">
       <TaskCreatForm onCreate={createTask} />
-      <TasksList tasks={tasks} onDelete={deleteTaskById} />
+      <TasksList
+        tasks={tasks}
+        onDelete={deleteTaskById}
+        onUpdate={editTaskById}
+      />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import TaskCreatForm from "./TaskCreatForm";
-const TaskCard = ({ task, onDelete }) => {
+const TaskCard = ({ task, onDelete, onUpdate }) => {
   const [showEdit, setShowEdit] = useState(false);
   const handleDeleteClick = () => {
     onDelete(task.id);
@@ -8,10 +8,15 @@ const TaskCard = ({ task, onDelete }) => {
   const handleEditClick = () => {
     setShowEdit(true);
   };
+  const handleSubmit = (id, title, description) => {
+    setShowEdit(false);
+
+    onUpdate(id, title, description);
+  };
   return (
     <div className="task-show">
       {showEdit ? (
-        <TaskCreatForm task={task} updateTask={true} />
+        <TaskCreatForm task={task} updateTask={true} onUpdate={handleSubmit} />
       ) : (
         <div className="task_card">
           <h1>{task.title}</h1>

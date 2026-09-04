@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const TaskCreatForm = ({ onCreate, task, updateTask }) => {
+const TaskCreatForm = ({ onCreate, task, updateTask, onUpdate }) => {
   const [title, setTitle] = useState(task ? task.title : "");
   const [description, setDescription] = useState(task ? task.description : "");
 
@@ -12,6 +12,9 @@ const TaskCreatForm = ({ onCreate, task, updateTask }) => {
   }
   function handleSubmit(event) {
     event.preventDefault();
+    if (updateTask) {
+      onUpdate(task.id, title, description);
+    }
     onCreate(title, description);
     setTitle("");
     setDescription("");
